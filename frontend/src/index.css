@@ -1,0 +1,13 @@
+@tailwind base; @tailwind components; @tailwind utilities;
+html { scroll-behavior: smooth; }
+body { @apply bg-cream text-ink font-sans; }
+.flip { perspective: 1000px; }
+.flip-in { transition: transform .6s; transform-style: preserve-3d; }
+.flip:hover .flip-in, .flip.on .flip-in { transform: rotateY(180deg); }
+.face { backface-visibility: hidden; -webkit-backface-visibility: hidden; }
+.back { transform: rotateY(180deg); }
+.reveal { opacity: 0; transform: translateY(24px); transition: opacity .7s, transform .7s; }
+.reveal.in { opacity: 1; transform: none; }
+@keyframes glow { 0%,100% { box-shadow: 0 0 0 0 rgba(244,157,26,.6); } 50% { box-shadow: 0 0 0 14px rgba(244,157,26,0); } }
+.pulse-cta { animation: glow 2.2s infinite; }
+@media (prefers-reduced-motion: reduce) { * { animation: none !important; transition: none !important; } html { scroll-behavior: auto; } }
