@@ -120,14 +120,14 @@ function Contact() {
   const send = async e => { e.preventDefault(); if (text.trim().length < 3) return setMsg("Write at least a few words."); await api("/feedback", { rating, text }); setText(""); setMsg("Thank you for your review."); setSum(await api("/feedback/summary")); };
   return <section id="contact" className="max-w-6xl mx-auto px-5 py-24 grid md:grid-cols-2 gap-10"><Reveal>
     <h2 className="font-serif text-4xl text-maroon">Visit and review</h2>
-    <p className="mt-3">Connaught Place, New Delhi · +91 98765 43210 · hello@spiceofindia.example</p>
+    <p className="mt-3">Phase 7,Mohali,Punjab · +91 8264135770 · hello@spiceofindia.example</p>
     <form onSubmit={send} className="mt-6 grid gap-3">
       <label>Rating<select className={field} value={rating} onChange={e => setRating(+e.target.value)}>{[5, 4, 3, 2, 1].map(n => <option key={n} value={n}>{n} of 5</option>)}</select></label>
       <label>Your review<textarea className={field} rows="3" value={text} onChange={e => setText(e.target.value)} /></label>
       <button className={`${btn} bg-maroon text-cream`}>Send review</button></form>
     {msg && <p className="mt-3 text-sm">{msg}</p>}
     {sum && <p className="mt-3 rounded-2xl bg-white p-4 border border-gold text-sm"><b>Guests say ({sum.average}/5):</b> {sum.summary}</p>}</Reveal>
-    <Reveal><iframe title="Map" className="w-full h-96 rounded-2xl border-0" loading="lazy" src="https://maps.google.com/maps?q=Connaught+Place+New+Delhi&output=embed" /></Reveal></section>;
+    <Reveal><iframe title="Map" className="w-full h-96 rounded-2xl border-0" loading="lazy" src="https://maps.google.com/maps?q=Phase+7+Mohali+Punjab&output=embed" /></Reveal></section>;
 }
 
 const SR_LANG = { en: "en-IN", hi: "hi-IN", pa: "pa-IN" };

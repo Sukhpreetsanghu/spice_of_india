@@ -1,1 +1,1 @@
-{ "rewrites": [{ "source": "/api/(.*)", "destination": "https://YOUR-BACKEND-HOST/api/$1" }] }
+{ "rewrites": [{ "source": "/api/(.*)", "destination": "https://13.60.220.83/api/$1" }] }
